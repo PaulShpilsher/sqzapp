@@ -6,7 +6,7 @@
 <p align="center">
     Yet another URL shortner's front-end (Svelte+Vite+Typescript)
     <br> 
-    SQZAPP - a front end portion of URL shortner service. It works in conjunction with back-end service <a href:="https://github.com/PaulShpilsher/sqzsvc">SQZSVC</a>
+    SQZAPP - a front end portion of the URL shortner solution. It works in conjunction with back-end service <a href="https://github.com/PaulShpilsher/sqzsvc">SQZSVC</a>
 </p>
 
 ## 📝 Table of Contents
