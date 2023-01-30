@@ -1,5 +1,5 @@
 <script lang="ts">
-  let shortCode: string;
+  let shortCode: string
 </script>
 
 <div class="short-url-link">
