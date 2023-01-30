@@ -1,12 +1,12 @@
 const apiBase: string = import.meta.env.VITE_SQZSVC_API;
 
 interface GetShortCodeResponse {
-    shortCode: string
+  shortCode: string;
 }
 
 export const getShortCode = async (longUrl: string): Promise<string> => {
   try {
-    const response = await fetch(`${apiBase}/short-code`, {
+    const response = await fetch(`${apiBase}/api/short-code/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -14,8 +14,8 @@ export const getShortCode = async (longUrl: string): Promise<string> => {
       },
       body: JSON.stringify({ url: longUrl }),
     });
-    const result = await response.json() as GetShortCodeResponse;
-    return result.shortCode;
+    const result = await response.json();
+    return (result as GetShortCodeResponse).shortCode;
   } catch (e) {
     console.error(e);
     throw e;

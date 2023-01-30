@@ -1,6 +1,6 @@
 <script lang="ts">
   import ShortUrlLink from "./ShortUrlLink.svelte";
-  import { getShortCode } from "../sqz.service";
+  import { getShortCode } from "../sqz-api.service";
 
   let disabled = false;
   let longUrl = "";
@@ -8,7 +8,7 @@
 
   function submit() {
     promise = getShortCode(longUrl);
-    disabled = true;
+    ///disabled = true;
   }
 </script>
 
@@ -25,7 +25,12 @@
 {#await promise}
   <p>...waiting</p>
 {:then shortCode}
-  <ShortUrlLink {shortCode} />
+<div class="short-url-link">
+  <div>
+    <a style="color: blue" href="{window.location.href}{shortCode}">{window.location.host}/{shortCode}</a>
+  </div>
+</div>
+<!-- <ShortUrlLink shortCode={result} /> -->
 {:catch error}
   <p style="color: red">{error.message}</p>
 {/await}
