@@ -24,9 +24,13 @@
 
 {#await promise}
   <p>...waiting</p>
-{:then result}
-  <p style="color: blue">{result}</p> 
-  <!-- <ShortUrlLink shortCode={result} /> -->
+{:then shortCode}
+<div class="short-url-link">
+  <div>
+    <a style="color: blue" href="{window.location.href}{shortCode}">{window.location.host}/{shortCode}</a>
+  </div>
+</div>
+<!-- <ShortUrlLink shortCode={result} /> -->
 {:catch error}
   <p style="color: red">{error.message}</p>
 {/await}
