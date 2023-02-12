@@ -6,7 +6,7 @@ interface GetShortCodeResponse {
 
 export const getShortCode = async (longUrl: string): Promise<string> => {
   try {
-    const response = await fetch(`${apiBase}/api/short-code/`, {
+    const response = await fetch(`${apiBase}/short-code/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
